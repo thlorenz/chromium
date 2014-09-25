@@ -1,0 +1,29 @@
+From 1cfde6f3f7cde8d79c0dfa8070a87194d750bd5d Mon Sep 17 00:00:00 2001
+From: Thorsten Lorenz <thlorenz@gmx.de>
+Date: Tue, 23 Sep 2014 18:05:00 -0400
+Subject: [PATCH] sendMessageToBackend logging
+
+---
+ content/renderer/devtools/devtools_client.cc | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/content/renderer/devtools/devtools_client.cc b/content/renderer/devtools/devtools_client.cc
+index 0d4f7dc..3ea1e57 100644
+--- a/content/renderer/devtools/devtools_client.cc
++++ b/content/renderer/devtools/devtools_client.cc
+@@ -37,6 +37,12 @@ DevToolsClient::~DevToolsClient() {
+ }
+ 
+ void DevToolsClient::sendMessageToBackend(const WebString& message)  {
++  const char* msg;
++  size_t len = message.length();
++  if (len > 1000) msg = message.utf8().substr(0, 1000).c_str();
++  else            msg = message.utf8().c_str();
++
++  fprintf(stderr, "[DevToolsClient::sendMessageToBackend].message: %s (length: %zu)\n", msg, len);
+   Send(new DevToolsAgentMsg_DispatchOnInspectorBackend(routing_id(),
+                                                        message.utf8()));
+ }
+-- 
+1.9.3 (Apple Git-50)
+
