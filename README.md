@@ -12,5 +12,6 @@ newest.
 
 ## Docs
 
+- [building](https://github.com/thlorenz/chromium/blob/master/building.md)
 - [debugging](https://github.com/thlorenz/chromium/blob/master/debugging.md)
 - [devtools](https://github.com/thlorenz/chromium/blob/master/devtools.md)
