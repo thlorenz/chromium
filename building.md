@@ -78,6 +78,11 @@ export CC=clang; export CXX=clang++;
 ninja -C out/Debug chrome
 ```
 
+I created a [script](https://github.com/thlorenz/chromium/blob/master/scripts/add-chromium-paths.sh) that does this for
+you. It assumes that this `patches` project is a sibling of the `src` folder created during `fetch`.
+
+Just source it to add the directories to your path: `source patches/scripts/add-chromium-paths.sh`.
+
 #### Xcode
 
 If you want to navigate/edit the code with Xcode you can create a [hybrid build](https://code.google.com/p/chromium/wiki/MacBuildInstructions#Using_Xcode-Ninja_Hybrid).
