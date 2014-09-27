@@ -4,6 +4,8 @@
 
 - [DevTools](#devtools)
   - [IPC](#ipc)
+    - [[chromium: Inter-process Communication (IPC) Design Docs](http://www.chromium.org/developers/design-documents/inter-process-communication)](#chromium-inter-process-communication-ipc-design-docshttpwwwchromiumorgdevelopersdesign-documentsinter-process-communication)
+    - [Sending BackTrace](#sending-backtrace)
   - [Protocol](#protocol)
   - [Flow](#flow)
 - [Setting Breakpoint](#setting-breakpoint)
@@ -56,6 +58,65 @@ following diagram:
                         |                                   |
                         | (inspected page renderer process) |
                          -----------------------------------
+```
+
+#### [chromium: Inter-process Communication (IPC) Design Docs](http://www.chromium.org/developers/design-documents/inter-process-communication)
+
+[Types of Messages](http://www.chromium.org/developers/design-documents/inter-process-communication#Types_of_messages)
+
+- [`src/content/common/view_messages.h`](https://code.google.com/p/chromium/codesearch#chromium/src/content/common/view_messages.h) contain different IPC message types
+
+[Handling Messages](http://www.chromium.org/developers/design-documents/inter-process-communication#Handling_messages)
+
+- implement `OnMessageReceived` [`src/ipc/ipc_listener.h`](https://code.google.com/p/chromium/codesearch#chromium/src/ipc/ipc_listener.h&l=21)
+- [`src/ipc/ipc_channel_proxy.cc`](https://code.google.com/p/chromium/codesearch#chromium/src/ipc/ipc_channel_proxy.cc&rcl=1411534708&l=82)
+  implementation
+
+#### Sending BackTrace
+
+Scheduling `OnSendMessage` task due to attaching devtools
+
+```
+* thread #1: tid = 0xa4706, 0x0295ff81 Chromium Framework`IPC::ChannelProxy::Send(this=0x791a1560, message=0x79532fa0) + 385 at ipc_channel_proxy.cc:410, name = 'CrBrowserMain', queue = 'com.apple.main-thread', stop reason = breakpoint 10.1
+* frame #0: 0x0295ff81 Chromium Framework`IPC::ChannelProxy::Send(this=0x791a1560, message=0x79532fa0) + 385 at ipc_channel_proxy.cc:410
+  frame #1: 0x0a866970 Chromium Framework`content::RenderProcessHostImpl::Send(this=0x7963ab00, msg=0x79532fa0) + 592 at render_process_host_impl.cc:1349
+  frame #2: 0x0a8bff62 Chromium Framework`content::RenderWidgetHostImpl::Send(this=0x787bf8b4, msg=0x79532fa0) + 226 at render_widget_host_impl.cc:493
+  frame #3: 0x0a1e587e Chromium Framework`content::RenderViewDevToolsAgentHost::SendMessageToAgent(this=0x7e520c40, msg=0x79532fa0) + 142 at render_view_devtools_agent_host.cc:173
+  frame #4: 0x0a1db67e Chromium Framework`content::IPCDevToolsAgentHost::DispatchProtocolMessage(this=0x7e520c40, message=0xbff65790) + 126 at ipc_devtools_agent_host.cc:23
+  frame #5: 0x0a1e5780 Chromium Framework`content::RenderViewDevToolsAgentHost::DispatchProtocolMessage(this=0x7e520c40, message=0xbff65790) + 1040 at render_view_devtools_agent_host.cc:166
+  frame #6: 0x01679849 Chromium Framework`DevToolsUIBindings::HandleMessageFromDevToolsFrontendToBackend(this=0x7e515994, message=0xbff65790) + 105 at devtools_ui_bindings.cc:418
+  frame #7: 0x016798af Chromium Framework`non-virtual thunk to DevToolsUIBindings::HandleMessageFromDevToolsFrontendToBackend(this=0x7e515998, message=0xbff65790) + 63 at devtools_ui_bindings.cc:419
+  frame #8: 0x0a1a8f9e Chromium Framework`content::DevToolsFrontendHostImpl::OnDispatchOnInspectorBackend(this=0x7e1816d0, message=0xbff65790) + 62 at devtools_frontend_host_impl.cc:48
+  frame #9: 0x0a1a941a Chromium Framework`void DispatchToMethod<content::DevToolsFrontendHostImpl, void (obj=0x7e1816d0, method=0x0a1a8f60, arg=0xbff65790)(std::string const&), std::string>(content::DevToolsFrontendHostImpl*, void (content::DevToolsFrontendHostImpl::*)(std::string const&), Tuple1<std::string> const&) + 154 at tuple.h:548
+  frame #10: 0x0a1a9224 Chromium Framework`bool DevToolsAgentMsg_DispatchOnInspectorBackend::Dispatch<content::DevToolsFrontendHostImpl, content::DevToolsFrontendHostImpl, void, void (msg=0x7e6f4248, obj=0x7e1816d0, sender=0x7e1816d0, parameter=0x00000000, func=0x0a1a8f60)(std::string const&)>(IPC::Message const*, content::DevToolsFrontendHostImpl*, content::DevToolsFrontendHostImpl*, void*, void (content::DevToolsFrontendHostImpl::*)(std::string const&)) + 164 at devtools_messages.h:78
+  frame #11: 0x0a1a8e29 Chromium Framework`content::DevToolsFrontendHostImpl::OnMessageReceived(this=0x7e1816d0, message=0x7e6f4248) + 313 at devtools_frontend_host_impl.cc:37
+  frame #12: 0x0a1a905f Chromium Framework`non-virtual thunk to content::DevToolsFrontendHostImpl::OnMessageReceived(this=0x7e1816d4, message=0x7e6f4248) + 63 at devtools_frontend_host_impl.cc:44
+  frame #13: 0x0ab89eab Chromium Framework`content::WebContentsImpl::OnMessageReceived(this=0x7ac66800, render_view_host=0x7e1d7f00, render_frame_host=0x00000000, message=0x7e6f4248) + 619 at web_contents_impl.cc:530
+  frame #14: 0x0ab89c05 Chromium Framework`content::WebContentsImpl::OnMessageReceived(this=0x7ac66800, render_view_host=0x7e1d7f00, message=0x7e6f4248) + 85 at web_contents_impl.cc:510
+  frame #15: 0x0ab8c25d Chromium Framework`non-virtual thunk to content::WebContentsImpl::OnMessageReceived(this=0x7ac6685c, render_view_host=0x7e1d7f00, message=0x7e6f4248) + 77 at web_contents_impl.cc:511
+  frame #16: 0x0a89d841 Chromium Framework`content::RenderViewHostImpl::OnMessageReceived(this=0x7e1d7f00, msg=0x7e6f4248) + 321 at render_view_host_impl.cc:900
+  frame #17: 0x0a8a0aff Chromium Framework`non-virtual thunk to content::RenderViewHostImpl::OnMessageReceived(this=0x7e1d7f10, msg=0x7e6f4248) + 63 at render_view_host_impl.cc:939
+  frame #18: 0x0a867438 Chromium Framework`content::RenderProcessHostImpl::OnMessageReceived(this=0x7963ab00, msg=0x7e6f4248) + 2456 at render_process_host_impl.cc:1399
+  frame #19: 0x0a867a9f Chromium Framework`non-virtual thunk to content::RenderProcessHostImpl::OnMessageReceived(this=0x7963ab04, msg=0x7e6f4248) + 63 at render_process_host_impl.cc:1400
+  frame #20: 0x0295dbd0 Chromium Framework`IPC::ChannelProxy::Context::OnDispatchMessage(this=0x791a15a0, message=0x7e6f4248) + 576 at ipc_channel_proxy.cc:274
+  frame #21: 0x02967c44 Chromium Framework`base::internal::RunnableAdapter<void (this=0xbff66ea0, object=0x791a15a0, a1=0x7e6f4248)(IPC::Message const&)>::Run(IPC::ChannelProxy::Context*, IPC::Message const&) + 148 at bind_internal.h:190
+  frame #22: 0x02967b4f Chromium Framework`base::internal::InvokeHelper<false, void, base::internal::RunnableAdapter<void (runnable=(method_ = 0x0295d990), a1=0x7e6f4244, a2=0x7e6f4248)(IPC::Message const&)>, void (IPC::ChannelProxy::Context* const&, IPC::Message const&)>::MakeItSo(base::internal::RunnableAdapter<void (IPC::ChannelProxy::Context::*)(IPC::Message const&)>, IPC::ChannelProxy::Context* const&, IPC::Message const&) + 95 at bind_internal.h:898
+  frame #23: 0x02967a84 Chromium Framework`base::internal::Invoker<2, base::internal::BindState<base::internal::RunnableAdapter<void (base=0x7e6f4230)(IPC::Message const&)>, void (IPC::ChannelProxy::Context*, IPC::Message const&), void (IPC::ChannelProxy::Context*, IPC::Message)>, void (IPC::ChannelProxy::Context*, IPC::Message const&)>::Run(base::internal::BindStateBase*) + 148 at bind_internal.h:1248
+```
+
+
+
+Handling scheduled `OnSendMessage` task on IPC::Channel thread
+[`src/ipc/ipc_channel_proxy.cc`](https://code.google.com/p/chromium/codesearch#chromium/src/ipc/ipc_channel_proxy.cc&l=170)
+
+```
+* thread #14: tid = 0xa4736, 0x02955a12 Chromium Framework`IPC::ChannelPosix::ProcessOutgoingMessages(this=0x7a373e00) + 338 at ipc_channel_posix.cc:394, name = 'Chrome_IOThread', stop reason = breakpoint 13.1
+* frame #0: 0x02955a12 Chromium Framework`IPC::ChannelPosix::ProcessOutgoingMessages(this=0x7a373e00) + 338 at ipc_channel_posix.cc:394
+  frame #1: 0x029567fa Chromium Framework`IPC::ChannelPosix::Send(this=0x7a373e00, message=0x7c9a55c0) + 762 at ipc_channel_posix.cc:540
+  frame #2: 0x0295e66c Chromium Framework`IPC::ChannelProxy::Context::OnSendMessage(this=0x791a15a0, message=scoped_ptr<IPC::Message, base::DefaultDeleter<IPC::Message> > at 0xb4a2a428) + 140 at ipc_channel_proxy.cc:176
+  frame #3: 0x02963c63 Chromium Framework`base::internal::RunnableAdapter<void (this=0xb4a2a490, object=0x791a15a0, a1=base::internal::CallbackParamTraits<scoped_ptr<IPC::Message, base::DefaultDeleter<IPC::Message> >, true>::ForwardType at 0xb4a2a470)(scoped_ptr<IPC::Message, base::DefaultDeleter<IPC::Message> >)>::Run(IPC::ChannelProxy::Context*, scoped_ptr<IPC::Message, base::DefaultDeleter<IPC::Message> >) + 195 at bind_internal.h:190
+  frame #4: 0x0296393f Chromium Framework`base::internal::InvokeHelper<false, void, base::internal::RunnableAdapter<void (runnable=(method_ = 0x0295e5e0), a1=0x791a15a0, a2=scoped_ptr<IPC::Message, base::DefaultDeleter<IPC::Message> > at 0xb4a2a4c8)(scoped_ptr<IPC::Message, base::DefaultDeleter<IPC::Message> >)>, void (IPC::ChannelProxy::Context*, scoped_ptr<IPC::Message, base::DefaultDeleter<IPC::Message> >)>::MakeItSo(base::internal::RunnableAdapter<void (IPC::ChannelProxy::Context::*)(scoped_ptr<IPC::Message, base::DefaultDeleter<IPC::Message> >)>, IPC::ChannelProxy::Context*, scoped_ptr<IPC::Message, base::DefaultDeleter<IPC::Message> >) + 143 at bind_internal.h:898
+  frame #5: 0x02963789 Chromium Framework`base::internal::Invoker<2, base::internal::BindState<base::internal::RunnableAdapter<void (base=0x79592a40)(scoped_ptr<IPC::Message, base::DefaultDeleter<IPC::Message> >)>, void (IPC::ChannelProxy::Context*, scoped_ptr<IPC::Message, base::DefaultDeleter<IPC::Message> >), void (scoped_refptr<IPC::ChannelProxy::Context>, base::internal::PassedWrapper<scoped_ptr<IPC::Message, base::DefaultDeleter<IPC::Message> > >)>, void (IPC::ChannelProxy::Context*, scoped_ptr<IPC::Message, base::DefaultDeleter<IPC::Message> >)>::Run(base::internal::BindStateBase*) + 249 at bind_internal.h:1248
 ```
 
 ### Protocol
