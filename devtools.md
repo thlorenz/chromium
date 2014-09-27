@@ -3,6 +3,7 @@
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
 - [DevTools](#devtools)
+  - [IPC](#ipc)
   - [Protocol](#protocol)
   - [Flow](#flow)
 - [Setting Breakpoint](#setting-breakpoint)
@@ -16,6 +17,46 @@
 ## DevTools
 
 - [src/third_party/WebKit/Source/devtools](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/devtools/)
+
+### IPC
+
+DevTools IPC description found inside [`devtools_messages.h`](https://code.google.com/p/chromium/codesearch#chromium/src/content/common/devtools_messages.h&q=devtools_messages.h&sq=package:chromium&type=cs&l=5)
+
+```
+Developer tools consist of the following parts:
+
+DevToolsAgent lives in the renderer of an inspected page and provides access
+to the pages resources, DOM, v8 etc. by means of IPC messages.
+
+DevToolsClient is a thin delegate that lives in the tools front-end
+renderer and converts IPC messages to frontend method calls and allows the
+frontend to send messages to the DevToolsAgent.
+
+All the messages are routed through browser process. There is a
+DevToolsManager living in the browser process that is responsible for
+routing logistics. It is also capable of sending direct messages to the
+agent rather than forwarding messages between agents and clients only.
+
+Chain of communication between the components may be described by the
+following diagram:
+ ----------------------------
+| (tools frontend            |
+| renderer process)          |
+|                            |            --------------------
+|tools    <--> DevToolsClient+<-- IPC -->+ (browser process)  |
+|frontend                    |           |                    |
+ ----------------------------             ---------+----------
+                                                   ^
+                                                   |
+                                                  IPC
+                                                   |
+                                                   v
+                         --------------------------+--------
+                        | inspected page <--> DevToolsAgent |
+                        |                                   |
+                        | (inspected page renderer process) |
+                         -----------------------------------
+```
 
 ### Protocol
 
