@@ -18,6 +18,9 @@
   - [Backend 1](#backend-1-1)
 - [Frontend 1](#frontend-1)
   - [Backend 2](#backend-2-1)
+  - [Invoking JS Functions](#invoking-js-functions)
+- [HTTP Handler](#http-handler)
+  - [Sniffing Remote Debug Messages](#sniffing-remote-debug-messages)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -867,3 +870,31 @@ Chrome_InProcRendererThread (28)#0  0x056ad696 in v8::internal::Debug::Break(v8:
 #113  0x0c8c846f in content::ChildThread::OnMessageReceived(IPC::Message const&) at content/child/child_thread.cc:494
 #114  0x0295dbd0 in IPC::ChannelProxy::Context::OnDispatchMessage(IPC::Message const&) at ipc/ipc_channel_proxy.cc:274
 ```
+
+### Invoking JS Functions
+
+```
+Chrome_InProcRendererThread (28)
+#0  0x0572a76d in v8::internal::Invoke(bool, v8::internal::Handle<v8::internal::JSFunction>, v8::internal::Handle<v8::internal::Object>, int, v8::internal::Handle<v8::internal::Object>*) at v8/src/execution.cc:91
+```
+
+## HTTP Handler
+
+Used via `--remote-debugging-port=????` flag. When launched with it DevTools can be used to remotely debug tabs in this
+chromium process (even debugging chromium from chrome works).
+
+```
+#0  0x0a22839e in content::RenderViewDevToolsAgentHost::DispatchProtocolMessage(std::string const&) at content/browser/devtools/render_view_devtools_agent_host.cc:134
+#1  0x0a1f2ff9 in content::(anonymous namespace)::DevToolsAgentHostClientImpl::OnMessage(std::string const&) at content/browser/devtools/devtools_http_handler_impl.cc:135
+#2  0x0a1f11b9 in content::DevToolsHttpHandlerImpl::OnWebSocketMessageUI(int, std::string const&) at content/browser/devtools/devtools_http_handler_impl.cc:693
+#3  0x0a202282 in base::internal::RunnableAdapter<void (content::DevToolsHttpHandlerImpl::*)(int, std::string const&)>::Run(content::DevToolsHttpHandlerImpl*, int const&, std::string const&) at base/bind_internal.h:248
+```
+
+This allows to do everything DevTools normally can, like Profiling, Debugging, looking at Network Traffic, etc.
+
+In order to fix problems that cause it to crash or disconnect, i.e. loading a large bundle into remotely attached
+devtools, apply [this patch](https://github.com/thlorenz/chromium/blob/master/0002-increasing-http-message-buffer-size.patch).
+
+### Sniffing Remote Debug Messages
+
+In order to see messages sent both ways use the [`crdp` command](https://github.com/thlorenz/chromium-remote-debugging-proxy#usage).
