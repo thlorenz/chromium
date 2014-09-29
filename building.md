@@ -90,9 +90,7 @@ If you want to navigate/edit the code with Xcode you can create a [hybrid build]
 Basically do the following:
 
 ```sh
-GYP_GENERATORS=ninja,xcode-ninja
-GYP_GENERATOR_FLAGS="xcode_ninja_main_gyp=src/build/ninja/all.ninja.gyp"
-gclient runhooks
+GYP_GENERATORS=ninja,xcode-ninja GYP_GENERATOR_FLAGS="xcode_ninja_main_gyp=src/build/ninja/all.ninja.gyp" gclient runhooks
 ```
 
 ## Ninja 
