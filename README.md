@@ -8,7 +8,7 @@ Additionally documenting inner workings of chromium mainly related to debugging,
 ## Patches
 
 Patches are based off the blink branch on top of commit `d9ab67759f6cd14a7f323a2134b6982f2dc7ed10` and ordered oldest to
-newest.
+newest and are generated via `git format-patch -1 <sha>`
 
 ## Docs
 

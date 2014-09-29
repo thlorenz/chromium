@@ -1,0 +1,25 @@
+From 7cde027987f3deafef82929f16235dfcdee7f3d1 Mon Sep 17 00:00:00 2001
+From: Thorsten Lorenz <thlorenz@gmx.de>
+Date: Sun, 28 Sep 2014 01:39:04 -0400
+Subject: [PATCH] increasing http message buffer size
+
+---
+ net/server/http_connection.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/net/server/http_connection.h b/net/server/http_connection.h
+index c7225e1..09d9a5e 100644
+--- a/net/server/http_connection.h
++++ b/net/server/http_connection.h
+@@ -30,7 +30,7 @@ class HttpConnection {
+     static const int kInitialBufSize = 1024;
+     static const int kMinimumBufSize = 128;
+     static const int kCapacityIncreaseFactor = 2;
+-    static const int kDefaultMaxBufferSize = 1 * 1024 * 1024;  // 1 Mbytes.
++    static const int kDefaultMaxBufferSize = 200 * 1024 * 1024;  // 200 Mbytes (increase it more if needed, i.e. for large bundles)
+ 
+     ReadIOBuffer();
+ 
+-- 
+1.9.3 (Apple Git-50)
+
