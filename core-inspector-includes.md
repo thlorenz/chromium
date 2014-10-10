@@ -55,6 +55,8 @@ Sub dependencies are indented below, if they are not, that means that they alrea
   - [DEPS bindings/core/v8/ScriptValue.h](#deps-bindingscorev8scriptvalueh)
     - [bindings/core/v8/SharedPersistent.h](#bindingscorev8sharedpersistenth)
         - [bindings/core/v8/ScopedPersistent.h](#bindingscorev8scopedpersistenth-2)
+  - [DEPS core/inspector/InjectedScriptBase.h](#deps-coreinspectorinjectedscriptbaseh)
+    - [chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h](#chromiumsrcoutdebuggenblinkcoreinspectortypebuilderh-2)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -196,6 +198,8 @@ None
   | [bindings/core/v8/ScriptState.h](#bindingscorev8scriptstateh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptState.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptState.h) |
   | [bindings/core/v8/ScriptValue.h](#bindingscorev8scriptvalueh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptValue.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptValue.h) |
   | [core/InspectorTypeBuilder.h](#coreinspectortypebuilderh) | [*chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h*](https://code.google.com/p/chromium/codesearch#chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h) |
+
+[DEPS](#deps-coreinspectorinjectedscriptbaseh)
 
 ###### core/inspector/InjectedScriptManager.h
 
@@ -382,3 +386,13 @@ None
 None
 
 * * *
+
+### DEPS core/inspector/InjectedScriptBase.h
+
+[REF](#coreinspectorinjectedscriptbaseh)
+
+#### chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [platform/JSONValues.h](#platformjsonvaluesh) | [*chromium/src/third_party/WebKit/Source/platform/JSONValues.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/JSONValues.h) |
