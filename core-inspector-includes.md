@@ -46,6 +46,10 @@ Sub dependencies are indented below, if they are not, that means that they alrea
         - [chromium/src/base/memory/scoped_ptr.h](#chromiumsrcbasememoryscoped_ptrh)
       - [chromium/src/gin/gin_export.h](#chromiumsrcgingin_exporth)
     - [chromium/src/gin/public/gin_embedders.h](#chromiumsrcginpublicgin_embeddersh)
+  - [DEPS core/dom/ContextLifecycleObserver.h](#deps-coredomcontextlifecycleobserverh)
+    - [platform/LifecycleContext.h](#platformlifecyclecontexth)
+        - [platform/LifecycleNotifier.h](#platformlifecyclenotifierh)
+        - [platform/LifecycleObserver.h](#platformlifecycleobserverh)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -142,6 +146,8 @@ None
   | Name     |      Path      |
   |----------|----------------|
   | [platform/LifecycleContext.h](#platformlifecyclecontexth) | [*chromium/src/third_party/WebKit/Source/platform/LifecycleContext.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/LifecycleContext.h) |
+
+[DEPS](#deps-coredomcontextlifecycleobserverh)
 
 ### core/inspector/ConsoleAPITypes.h
 
@@ -326,3 +332,30 @@ None
 #### chromium/src/gin/public/gin_embedders.h
 
 None
+
+* * *
+
+### DEPS core/dom/ContextLifecycleObserver.h  
+
+[REF](#coredomcontextlifecycleobserverh)
+
+#### platform/LifecycleContext.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [platform/LifecycleNotifier.h](#platformlifecyclenotifierh) | [*chromium/src/third_party/WebKit/Source/platform/LifecycleNotifier.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/LifecycleNotifier.h) |
+| [platform/LifecycleObserver.h](#platformlifecycleobserverh) | [*chromium/src/third_party/WebKit/Source/platform/LifecycleObserver.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/LifecycleObserver.h) |
+
+###### platform/LifecycleNotifier.h
+
+- 
+
+  | Name     |      Path      |
+  |----------|----------------|
+  | [platform/LifecycleObserver.h](#platformlifecycleobserverh) | [*chromium/src/third_party/WebKit/Source/platform/LifecycleObserver.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/LifecycleObserver.h) |
+
+###### platform/LifecycleObserver.h
+
+None
+
+* * *
