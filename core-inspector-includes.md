@@ -94,12 +94,15 @@ None of the base dependencies depend on anything but each other.
     - [bindings/core/v8/ScriptDebugServer.h](#bindingscorev8scriptdebugserverh)
     - [bindings/core/v8/ScriptRegexp.h](#bindingscorev8scriptregexph)
     - [bindings/core/v8/ScriptSourceCode.h](#bindingscorev8scriptsourcecodeh)
+        - [bindings/core/v8/ScriptStreamer.h](#bindingscorev8scriptstreamerh)
     - [core/inspector/ConsoleMessage.h](#coreinspectorconsolemessageh)
     - [core/inspector/ContentSearchUtils.h](#coreinspectorcontentsearchutilsh)
     - [core/inspector/InspectorPageAgent.h](#coreinspectorinspectorpageagenth)
+        - [core/inspector/InspectorResourceContentLoader.h](#coreinspectorinspectorresourcecontentloaderh)
     - [core/inspector/InspectorState.h](#coreinspectorinspectorstateh)
     - [core/inspector/InstrumentingAgents.h](#coreinspectorinstrumentingagentsh-1)
     - [core/inspector/JavaScriptCallFrame.h](#coreinspectorjavascriptcallframeh)
+        - [bindings/core/v8/ScriptWrappable.h](#bindingscorev8scriptwrappableh)
     - [core/inspector/ScriptAsyncCallStack.h](#coreinspectorscriptasynccallstackh)
     - [core/inspector/ScriptCallFrame.h](#coreinspectorscriptcallframeh)
     - [core/inspector/ScriptCallStack.h](#coreinspectorscriptcallstackh)
@@ -511,9 +514,18 @@ None
 | [core/fetch/ResourcePtr.h](#corefetchresourceptrh) | [*chromium/src/third_party/WebKit/Source/core/fetch/ResourcePtr.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/fetch/ResourcePtr.h) |
 | [core/fetch/ScriptResource.h](#corefetchscriptresourceh) | [*chromium/src/third_party/WebKit/Source/core/fetch/ScriptResource.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/fetch/ScriptResource.h) |
 | [platform/weborigin/KURL.h](#platformweboriginkurlh) | [*chromium/src/third_party/WebKit/Source/platform/weborigin/KURL.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/weborigin/KURL.h) |
-| [wtf/PassOwnPtr.h](#wtfpassownptrh) | [*chromium/src/third_party/WebKit/Source/wtf/PassOwnPtr.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/wtf/PassOwnPtr.h) |
-| [wtf/text/TextPosition.h](#wtftexttextpositionh) | [*chromium/src/third_party/WebKit/Source/wtf/text/TextPosition.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/wtf/text/TextPosition.h) |
-| [wtf/text/WTFString.h](#wtftextwtfstringh) | [*chromium/src/third_party/WebKit/Source/wtf/text/WTFString.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/wtf/text/WTFString.h) |
+
+- leaving out last 3 since they seem only necessary when fetching resources remotely which we won't do
+
+###### bindings/core/v8/ScriptStreamer.h
+
+- 
+
+  | Name     |      Path      |
+  |----------|----------------|
+  | [core/dom/PendingScript.h](#coredompendingscripth) | [*chromium/src/third_party/WebKit/Source/core/dom/PendingScript.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/dom/PendingScript.h) |
+
+- ignore this include, we want to leave the dom out of this
 
 #### core/inspector/ConsoleMessage.h
 
@@ -538,8 +550,16 @@ None
 | [core/InspectorFrontend.h](#coreinspectorfrontendh) | [*chromium/src/out/Debug/gen/blink/core/InspectorFrontend.h*](https://code.google.com/p/chromium/codesearch#chromium/src/out/Debug/gen/blink/core/InspectorFrontend.h) |
 | [core/inspector/InspectorBaseAgent.h](#coreinspectorinspectorbaseagenth) | [*chromium/src/third_party/WebKit/Source/core/inspector/InspectorBaseAgent.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/InspectorBaseAgent.h) |
 | [core/inspector/InspectorResourceContentLoader.h](#coreinspectorinspectorresourcecontentloaderh) | [*chromium/src/third_party/WebKit/Source/core/inspector/InspectorResourceContentLoader.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/InspectorResourceContentLoader.h) |
-| [wtf/HashMap.h](#wtfhashmaph) | [*chromium/src/third_party/WebKit/Source/wtf/HashMap.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/wtf/HashMap.h) |
-| [wtf/text/WTFString.h](#wtftextwtfstringh) | [*chromium/src/third_party/WebKit/Source/wtf/text/WTFString.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/wtf/text/WTFString.h) |
+
+###### core/inspector/InspectorResourceContentLoader.h
+
+- 
+
+  | Name     |      Path      |
+  |----------|----------------|
+  | [core/fetch/ResourcePtr.h](#corefetchresourceptrh) | [*chromium/src/third_party/WebKit/Source/core/fetch/ResourcePtr.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/fetch/ResourcePtr.h) |
+
+- ignore this include since related to fetching resources
 
 #### core/inspector/InspectorState.h
 
@@ -561,6 +581,18 @@ None
 | [bindings/core/v8/ScopedPersistent.h](#bindingscorev8scopedpersistenth) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScopedPersistent.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScopedPersistent.h) |
 | [bindings/core/v8/ScriptState.h](#bindingscorev8scriptstateh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptState.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptState.h) |
 | [bindings/core/v8/ScriptWrappable.h](#bindingscorev8scriptwrappableh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptWrappable.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptWrappable.h) |
+
+###### bindings/core/v8/ScriptWrappable.h
+
+- 
+
+  | Name     |      Path      |
+  |----------|----------------|
+  | [bindings/core/v8/WrapperTypeInfo.h](#bindingscorev8wrappertypeinfoh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/WrapperTypeInfo.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/WrapperTypeInfo.h) |
+  | [platform/ScriptForbiddenScope.h](#platformscriptforbiddenscopeh) | [*chromium/src/third_party/WebKit/Source/platform/ScriptForbiddenScope.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/ScriptForbiddenScope.h) |
+
+- `platform/ScriptForbiddenScope.h` has no dependencies that aren't already covered, so no DEPS section was included
+  here
 
 #### core/inspector/ScriptAsyncCallStack.h
 
