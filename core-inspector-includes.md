@@ -6,6 +6,8 @@ Generated via [devtools snippet](https://github.com/thlorenz/chromium/blob/maste
 
 Sub dependencies are indented below, if they are not, that means that they already occurred as a sub dependency before.
 
+`wtf` lib and `v8` lib dependencies are left out since they are considered to be covered
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
@@ -50,6 +52,9 @@ Sub dependencies are indented below, if they are not, that means that they alrea
     - [platform/LifecycleContext.h](#platformlifecyclecontexth)
         - [platform/LifecycleNotifier.h](#platformlifecyclenotifierh)
         - [platform/LifecycleObserver.h](#platformlifecycleobserverh)
+  - [DEPS bindings/core/v8/ScriptValue.h](#deps-bindingscorev8scriptvalueh)
+    - [bindings/core/v8/SharedPersistent.h](#bindingscorev8sharedpersistenth)
+        - [bindings/core/v8/ScopedPersistent.h](#bindingscorev8scopedpersistenth-2)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -171,6 +176,8 @@ None
   |----------|----------------|
   | [bindings/core/v8/ScriptState.h](#bindingscorev8scriptstateh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptState.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptState.h) |
   | [bindings/core/v8/SharedPersistent.h](#bindingscorev8sharedpersistenth) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/SharedPersistent.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/SharedPersistent.h) |
+
+[DEPS](#deps-bindingscorev8scriptvalueh)
 
 ###### chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h
 
@@ -355,6 +362,22 @@ None
   | [platform/LifecycleObserver.h](#platformlifecycleobserverh) | [*chromium/src/third_party/WebKit/Source/platform/LifecycleObserver.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/LifecycleObserver.h) |
 
 ###### platform/LifecycleObserver.h
+
+None
+
+* * *
+
+### DEPS bindings/core/v8/ScriptValue.h
+
+#### bindings/core/v8/SharedPersistent.h
+
+[REF](#bindingscorev8scriptvalueh)
+
+| Name     |      Path      |
+|----------|----------------|
+| [bindings/core/v8/ScopedPersistent.h](#bindingscorev8scopedpersistenth) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScopedPersistent.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScopedPersistent.h) |
+
+###### bindings/core/v8/ScopedPersistent.h
 
 None
 
