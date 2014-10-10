@@ -6,37 +6,47 @@ Generated via [devtools snippet](https://github.com/thlorenz/chromium/blob/maste
 
 Sub dependencies are indented below, if they are not, that means that they already occurred as a sub dependency before.
 
-## core/inspector/InspectorDebuggerAgent.h
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
-- [bindings/core/v8/ScriptState.h](#bindingscorev8scriptstateh)
-    - [bindings/core/v8/ScopedPersistent.h](#bindingscorev8scopedpersistenth)
-    - [bindings/core/v8/V8PerContextData.h](#bindingscorev8v8percontextdatah)
-- [chromium/src/out/Debug/gen/blink/core/InspectorFrontend.h](#chromiumsrcoutdebuggenblinkcoreinspectorfrontendh)
-    - [chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h](#chromiumsrcoutdebuggenblinkcoreinspectortypebuilderh)
-    - [core/inspector/InspectorFrontendChannel.h](#coreinspectorinspectorfrontendchannelh)
-    - [platform/JSONValues.h](#platformjsonvaluesh)
-- [core/frame/ConsoleTypes.h](#coreframeconsoletypesh)
-- [core/inspector/AsyncCallStackTracker.h](#coreinspectorasynccallstacktrackerh)
-- [core/inspector/ConsoleAPITypes.h](#coreinspectorconsoleapitypesh)
-- [core/inspector/InjectedScript.h](#coreinspectorinjectedscripth)
-    - [bindings/core/v8/ScriptValue.h](#bindingscorev8scriptvalueh)
-    - [chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h](#chromiumsrcoutdebuggenblinkcoreinspectortypebuilderh-1)
-    - [core/inspector/InjectedScriptBase.h](#coreinspectorinjectedscriptbaseh)
-    - [core/inspector/InjectedScriptManager.h](#coreinspectorinjectedscriptmanagerh)
-    - [core/inspector/ScriptArguments.h](#coreinspectorscriptargumentsh)
-- [core/inspector/InspectorBaseAgent.h](#coreinspectorinspectorbaseagenth)
-    - [chromium/src/out/Debug/gen/blink/core/InspectorBackendDispatcher.h](#chromiumsrcoutdebuggenblinkcoreinspectorbackenddispatcherh)
-    - [core/inspector/InstrumentingAgents.h](#coreinspectorinstrumentingagentsh)
-    - [platform/heap/Handle.h](#platformheaphandleh)
-- [core/inspector/PromiseTracker.h](#coreinspectorpromisetrackerh)
-- [core/inspector/ScriptBreakpoint.h](#coreinspectorscriptbreakpointh)
-- [core/inspector/ScriptDebugListener.h](#coreinspectorscriptdebuglistenerh)
+- [core/inspector/InspectorDebuggerAgent.h](#coreinspectorinspectordebuggeragenth)
+    - [bindings/core/v8/ScriptState.h](#bindingscorev8scriptstateh)
+        - [bindings/core/v8/ScopedPersistent.h](#bindingscorev8scopedpersistenth)
+        - [bindings/core/v8/V8PerContextData.h](#bindingscorev8v8percontextdatah)
+    - [chromium/src/out/Debug/gen/blink/core/InspectorFrontend.h](#chromiumsrcoutdebuggenblinkcoreinspectorfrontendh)
+        - [chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h](#chromiumsrcoutdebuggenblinkcoreinspectortypebuilderh)
+        - [core/inspector/InspectorFrontendChannel.h](#coreinspectorinspectorfrontendchannelh)
+        - [platform/JSONValues.h](#platformjsonvaluesh)
+  - [core/frame/ConsoleTypes.h](#coreframeconsoletypesh)
+  - [core/inspector/AsyncCallStackTracker.h](#coreinspectorasynccallstacktrackerh)
+        - [core/dom/ContextLifecycleObserver.h](#coredomcontextlifecycleobserverh)
+  - [core/inspector/ConsoleAPITypes.h](#coreinspectorconsoleapitypesh)
+  - [core/inspector/InjectedScript.h](#coreinspectorinjectedscripth)
+        - [bindings/core/v8/ScriptValue.h](#bindingscorev8scriptvalueh)
+        - [chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h](#chromiumsrcoutdebuggenblinkcoreinspectortypebuilderh-1)
+        - [core/inspector/InjectedScriptBase.h](#coreinspectorinjectedscriptbaseh)
+        - [core/inspector/InjectedScriptManager.h](#coreinspectorinjectedscriptmanagerh)
+        - [core/inspector/ScriptArguments.h](#coreinspectorscriptargumentsh)
+    - [core/inspector/InspectorBaseAgent.h](#coreinspectorinspectorbaseagenth)
+        - [chromium/src/out/Debug/gen/blink/core/InspectorBackendDispatcher.h](#chromiumsrcoutdebuggenblinkcoreinspectorbackenddispatcherh)
+        - [core/inspector/InstrumentingAgents.h](#coreinspectorinstrumentingagentsh)
+        - [platform/heap/Handle.h](#platformheaphandleh)
+    - [core/inspector/PromiseTracker.h](#coreinspectorpromisetrackerh)
+    - [core/inspector/ScriptBreakpoint.h](#coreinspectorscriptbreakpointh)
+    - [core/inspector/ScriptDebugListener.h](#coreinspectorscriptdebuglistenerh)
+  - [DEPS bindings/core/v8/V8PerContextData.h](#deps-bindingscorev8v8percontextdatah)
+    - [bindings/core/v8/CustomElementBinding.h](#bindingscorev8customelementbindingh)
+    - [bindings/core/v8/ScopedPersistent.h](#bindingscorev8scopedpersistenth-1)
+    - [bindings/core/v8/V8PersistentValueMap.h](#bindingscorev8v8persistentvaluemaph)
+    - [bindings/core/v8/WrapperTypeInfo.h](#bindingscorev8wrappertypeinfoh)
+    - [chromium/src/gin/public/context_holder.h](#chromiumsrcginpubliccontext_holderh)
+    - [chromium/src/gin/public/gin_embedders.h](#chromiumsrcginpublicgin_embeddersh)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
+## core/inspector/InspectorDebuggerAgent.h
 
 
 | Name     |      Path      |
@@ -75,6 +85,8 @@ Sub dependencies are indented below, if they are not, that means that they alrea
   | [bindings/core/v8/WrapperTypeInfo.h](#bindingscorev8wrappertypeinfoh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/WrapperTypeInfo.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/WrapperTypeInfo.h) |
   | [gin/public/context_holder.h](#ginpubliccontext_holderh) | [*chromium/src/gin/public/context_holder.h*](https://code.google.com/p/chromium/codesearch#chromium/src/gin/public/context_holder.h) |
   | [gin/public/gin_embedders.h](#ginpublicgin_embeddersh) | [*chromium/src/gin/public/gin_embedders.h*](https://code.google.com/p/chromium/codesearch#chromium/src/gin/public/gin_embedders.h) |
+
+[DEPS](#deps-bindingscorev8v8percontextdatah)
 
 #### chromium/src/out/Debug/gen/blink/core/InspectorFrontend.h
 
@@ -118,6 +130,14 @@ None
 |----------|----------------|
 | [bindings/core/v8/ScriptValue.h](#bindingscorev8scriptvalueh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptValue.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptValue.h) |
 | [core/dom/ContextLifecycleObserver.h](#coredomcontextlifecycleobserverh) | [*chromium/src/third_party/WebKit/Source/core/dom/ContextLifecycleObserver.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/dom/ContextLifecycleObserver.h) |
+
+###### core/dom/ContextLifecycleObserver.h
+
+- 
+
+  | Name     |      Path      |
+  |----------|----------------|
+  | [platform/LifecycleContext.h](#platformlifecyclecontexth) | [*chromium/src/third_party/WebKit/Source/platform/LifecycleContext.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/LifecycleContext.h) |
 
 ### core/inspector/ConsoleAPITypes.h
 
@@ -229,3 +249,43 @@ None
 | Name     |      Path      |
 |----------|----------------|
 | [bindings/core/v8/ScriptState.h](#bindingscorev8scriptstateh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptState.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptState.h) |
+
+
+* * *
+
+### DEPS bindings/core/v8/V8PerContextData.h
+
+[REF](#bindingscorev8v8percontextdatah)
+
+#### bindings/core/v8/CustomElementBinding.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [bindings/core/v8/ScopedPersistent.h](#bindingscorev8scopedpersistenth) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScopedPersistent.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScopedPersistent.h) |
+
+#### bindings/core/v8/ScopedPersistent.h
+
+None
+
+#### bindings/core/v8/V8PersistentValueMap.h
+
+None
+
+#### bindings/core/v8/WrapperTypeInfo.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [gin/public/wrapper_info.h](#ginpublicwrapper_infoh) | [*chromium/src/gin/public/wrapper_info.h*](https://code.google.com/p/chromium/codesearch#chromium/src/gin/public/wrapper_info.h) |
+| [platform/heap/Handle.h](#platformheaphandleh) | [*chromium/src/third_party/WebKit/Source/platform/heap/Handle.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/heap/Handle.h) |
+
+#### chromium/src/gin/public/context_holder.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [base/basictypes.h](#basebasictypesh) | [*chromium/src/base/basictypes.h*](https://code.google.com/p/chromium/codesearch#chromium/src/base/basictypes.h) |
+| [base/memory/scoped_ptr.h](#basememoryscoped_ptrh) | [*chromium/src/base/memory/scoped_ptr.h*](https://code.google.com/p/chromium/codesearch#chromium/src/base/memory/scoped_ptr.h) |
+| [gin/gin_export.h](#gingin_exporth) | [*chromium/src/gin/gin_export.h*](https://code.google.com/p/chromium/codesearch#chromium/src/gin/gin_export.h) |
+
+#### chromium/src/gin/public/gin_embedders.h
+
+None
