@@ -90,6 +90,19 @@ None of the base dependencies depend on anything but each other.
     - [chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h](#chromiumsrcoutdebuggenblinkcoreinspectortypebuilderh-2)
   - [DEPS core/inspector/InstrumentingAgents.h](#deps-coreinspectorinstrumentingagentsh)
     - [chromium/src/out/Debug/gen/blink/core/InstrumentingAgentsInl.h](#chromiumsrcoutdebuggenblinkcoreinstrumentingagentsinlh)
+- [core/inspector/InspectorDebuggerAgent.cpp](#coreinspectorinspectordebuggeragentcpp)
+    - [bindings/core/v8/ScriptDebugServer.h](#bindingscorev8scriptdebugserverh)
+    - [bindings/core/v8/ScriptRegexp.h](#bindingscorev8scriptregexph)
+    - [bindings/core/v8/ScriptSourceCode.h](#bindingscorev8scriptsourcecodeh)
+    - [core/inspector/ConsoleMessage.h](#coreinspectorconsolemessageh)
+    - [core/inspector/ContentSearchUtils.h](#coreinspectorcontentsearchutilsh)
+    - [core/inspector/InspectorPageAgent.h](#coreinspectorinspectorpageagenth)
+    - [core/inspector/InspectorState.h](#coreinspectorinspectorstateh)
+    - [core/inspector/InstrumentingAgents.h](#coreinspectorinstrumentingagentsh-1)
+    - [core/inspector/JavaScriptCallFrame.h](#coreinspectorjavascriptcallframeh)
+    - [core/inspector/ScriptAsyncCallStack.h](#coreinspectorscriptasynccallstackh)
+    - [core/inspector/ScriptCallFrame.h](#coreinspectorscriptcallframeh)
+    - [core/inspector/ScriptCallStack.h](#coreinspectorscriptcallstackh)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -443,4 +456,130 @@ None
 
 | Name     |      Path      |
 |----------|----------------|
+| [platform/heap/Handle.h](#platformheaphandleh) | [*chromium/src/third_party/WebKit/Source/platform/heap/Handle.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/heap/Handle.h) |
+
+* * *
+
+## core/inspector/InspectorDebuggerAgent.cpp
+
+| Name     |      Path      |
+|----------|----------------|
+| [core/inspector/InspectorDebuggerAgent.h](#coreinspectorinspectordebuggeragenth) | [*chromium/src/third_party/WebKit/Source/core/inspector/InspectorDebuggerAgent.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/InspectorDebuggerAgent.h) |
+| [bindings/core/v8/ScriptDebugServer.h](#bindingscorev8scriptdebugserverh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptDebugServer.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptDebugServer.h) |
+| [bindings/core/v8/ScriptRegexp.h](#bindingscorev8scriptregexph) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptRegexp.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptRegexp.h) |
+| [bindings/core/v8/ScriptSourceCode.h](#bindingscorev8scriptsourcecodeh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptSourceCode.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptSourceCode.h) |
+| [bindings/core/v8/ScriptValue.h](#bindingscorev8scriptvalueh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptValue.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptValue.h) |
+| [core/dom/Document.h](#coredomdocumenth) | [*chromium/src/third_party/WebKit/Source/core/dom/Document.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/dom/Document.h) |
+| [core/dom/ExecutionContextTask.h](#coredomexecutioncontexttaskh) | [*chromium/src/third_party/WebKit/Source/core/dom/ExecutionContextTask.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/dom/ExecutionContextTask.h) |
+| [core/fetch/Resource.h](#corefetchresourceh) | [*chromium/src/third_party/WebKit/Source/core/fetch/Resource.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/fetch/Resource.h) |
+| [core/inspector/ConsoleMessage.h](#coreinspectorconsolemessageh) | [*chromium/src/third_party/WebKit/Source/core/inspector/ConsoleMessage.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/ConsoleMessage.h) |
+| [core/inspector/ContentSearchUtils.h](#coreinspectorcontentsearchutilsh) | [*chromium/src/third_party/WebKit/Source/core/inspector/ContentSearchUtils.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/ContentSearchUtils.h) |
+| [core/inspector/InjectedScriptManager.h](#coreinspectorinjectedscriptmanagerh) | [*chromium/src/third_party/WebKit/Source/core/inspector/InjectedScriptManager.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/InjectedScriptManager.h) |
+| [core/inspector/InspectorPageAgent.h](#coreinspectorinspectorpageagenth) | [*chromium/src/third_party/WebKit/Source/core/inspector/InspectorPageAgent.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/InspectorPageAgent.h) |
+| [core/inspector/InspectorState.h](#coreinspectorinspectorstateh) | [*chromium/src/third_party/WebKit/Source/core/inspector/InspectorState.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/InspectorState.h) |
+| [core/inspector/InstrumentingAgents.h](#coreinspectorinstrumentingagentsh) | [*chromium/src/third_party/WebKit/Source/core/inspector/InstrumentingAgents.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/InstrumentingAgents.h) |
+| [core/inspector/JavaScriptCallFrame.h](#coreinspectorjavascriptcallframeh) | [*chromium/src/third_party/WebKit/Source/core/inspector/JavaScriptCallFrame.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/JavaScriptCallFrame.h) |
+| [core/inspector/ScriptArguments.h](#coreinspectorscriptargumentsh) | [*chromium/src/third_party/WebKit/Source/core/inspector/ScriptArguments.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/ScriptArguments.h) |
+| [core/inspector/ScriptAsyncCallStack.h](#coreinspectorscriptasynccallstackh) | [*chromium/src/third_party/WebKit/Source/core/inspector/ScriptAsyncCallStack.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/ScriptAsyncCallStack.h) |
+| [core/inspector/ScriptCallFrame.h](#coreinspectorscriptcallframeh) | [*chromium/src/third_party/WebKit/Source/core/inspector/ScriptCallFrame.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/ScriptCallFrame.h) |
+| [core/inspector/ScriptCallStack.h](#coreinspectorscriptcallstackh) | [*chromium/src/third_party/WebKit/Source/core/inspector/ScriptCallStack.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/ScriptCallStack.h) |
+| [platform/JSONValues.h](#platformjsonvaluesh) | [*chromium/src/third_party/WebKit/Source/platform/JSONValues.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/JSONValues.h) |
+
+- leaving out `core/dom` dependencies, there is no way we should pull those in neither should we need them.
+- leaving out `core/fetch/Resource.h` since we shouldn't need to fetch any
+
+#### bindings/core/v8/ScriptDebugServer.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [bindings/core/v8/ScopedPersistent.h](#bindingscorev8scopedpersistenth) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScopedPersistent.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScopedPersistent.h) |
+| [core/inspector/ScriptBreakpoint.h](#coreinspectorscriptbreakpointh) | [*chromium/src/third_party/WebKit/Source/core/inspector/ScriptBreakpoint.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/ScriptBreakpoint.h) |
+| [core/inspector/ScriptCallStack.h](#coreinspectorscriptcallstackh) | [*chromium/src/third_party/WebKit/Source/core/inspector/ScriptCallStack.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/ScriptCallStack.h) |
+| [core/inspector/ScriptDebugListener.h](#coreinspectorscriptdebuglistenerh) | [*chromium/src/third_party/WebKit/Source/core/inspector/ScriptDebugListener.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/ScriptDebugListener.h) |
+
+#### bindings/core/v8/ScriptRegexp.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [bindings/core/v8/ScopedPersistent.h](#bindingscorev8scopedpersistenth) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScopedPersistent.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScopedPersistent.h) |
+
+#### bindings/core/v8/ScriptSourceCode.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [bindings/core/v8/ScriptStreamer.h](#bindingscorev8scriptstreamerh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptStreamer.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptStreamer.h) |
+| [core/fetch/ResourcePtr.h](#corefetchresourceptrh) | [*chromium/src/third_party/WebKit/Source/core/fetch/ResourcePtr.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/fetch/ResourcePtr.h) |
+| [core/fetch/ScriptResource.h](#corefetchscriptresourceh) | [*chromium/src/third_party/WebKit/Source/core/fetch/ScriptResource.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/fetch/ScriptResource.h) |
+| [platform/weborigin/KURL.h](#platformweboriginkurlh) | [*chromium/src/third_party/WebKit/Source/platform/weborigin/KURL.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/weborigin/KURL.h) |
+| [wtf/PassOwnPtr.h](#wtfpassownptrh) | [*chromium/src/third_party/WebKit/Source/wtf/PassOwnPtr.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/wtf/PassOwnPtr.h) |
+| [wtf/text/TextPosition.h](#wtftexttextpositionh) | [*chromium/src/third_party/WebKit/Source/wtf/text/TextPosition.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/wtf/text/TextPosition.h) |
+| [wtf/text/WTFString.h](#wtftextwtfstringh) | [*chromium/src/third_party/WebKit/Source/wtf/text/WTFString.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/wtf/text/WTFString.h) |
+
+#### core/inspector/ConsoleMessage.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [bindings/core/v8/ScriptState.h](#bindingscorev8scriptstateh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptState.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptState.h) |
+| [core/frame/ConsoleTypes.h](#coreframeconsoletypesh) | [*chromium/src/third_party/WebKit/Source/core/frame/ConsoleTypes.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/frame/ConsoleTypes.h) |
+| [core/inspector/ConsoleAPITypes.h](#coreinspectorconsoleapitypesh) | [*chromium/src/third_party/WebKit/Source/core/inspector/ConsoleAPITypes.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/ConsoleAPITypes.h) |
+| [core/inspector/ScriptCallStack.h](#coreinspectorscriptcallstackh) | [*chromium/src/third_party/WebKit/Source/core/inspector/ScriptCallStack.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/ScriptCallStack.h) |
+| [platform/heap/Handle.h](#platformheaphandleh) | [*chromium/src/third_party/WebKit/Source/platform/heap/Handle.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/heap/Handle.h) |
+
+#### core/inspector/ContentSearchUtils.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [core/InspectorTypeBuilder.h](#coreinspectortypebuilderh) | [*chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h*](https://code.google.com/p/chromium/codesearch#chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h) |
+
+#### core/inspector/InspectorPageAgent.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [core/InspectorFrontend.h](#coreinspectorfrontendh) | [*chromium/src/out/Debug/gen/blink/core/InspectorFrontend.h*](https://code.google.com/p/chromium/codesearch#chromium/src/out/Debug/gen/blink/core/InspectorFrontend.h) |
+| [core/inspector/InspectorBaseAgent.h](#coreinspectorinspectorbaseagenth) | [*chromium/src/third_party/WebKit/Source/core/inspector/InspectorBaseAgent.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/InspectorBaseAgent.h) |
+| [core/inspector/InspectorResourceContentLoader.h](#coreinspectorinspectorresourcecontentloaderh) | [*chromium/src/third_party/WebKit/Source/core/inspector/InspectorResourceContentLoader.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/InspectorResourceContentLoader.h) |
+| [wtf/HashMap.h](#wtfhashmaph) | [*chromium/src/third_party/WebKit/Source/wtf/HashMap.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/wtf/HashMap.h) |
+| [wtf/text/WTFString.h](#wtftextwtfstringh) | [*chromium/src/third_party/WebKit/Source/wtf/text/WTFString.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/wtf/text/WTFString.h) |
+
+#### core/inspector/InspectorState.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [platform/JSONValues.h](#platformjsonvaluesh) | [*chromium/src/third_party/WebKit/Source/platform/JSONValues.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/JSONValues.h) |
+| [platform/heap/Handle.h](#platformheaphandleh) | [*chromium/src/third_party/WebKit/Source/platform/heap/Handle.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/heap/Handle.h) |
+
+#### core/inspector/InstrumentingAgents.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [core/InstrumentingAgentsInl.h](#coreinstrumentingagentsinlh) | [*chromium/src/out/Debug/gen/blink/core/InstrumentingAgentsInl.h*](https://code.google.com/p/chromium/codesearch#chromium/src/out/Debug/gen/blink/core/InstrumentingAgentsInl.h) |
+
+#### core/inspector/JavaScriptCallFrame.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [bindings/core/v8/ScopedPersistent.h](#bindingscorev8scopedpersistenth) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScopedPersistent.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScopedPersistent.h) |
+| [bindings/core/v8/ScriptState.h](#bindingscorev8scriptstateh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptState.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptState.h) |
+| [bindings/core/v8/ScriptWrappable.h](#bindingscorev8scriptwrappableh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptWrappable.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptWrappable.h) |
+
+#### core/inspector/ScriptAsyncCallStack.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [core/InspectorTypeBuilder.h](#coreinspectortypebuilderh) | [*chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h*](https://code.google.com/p/chromium/codesearch#chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h) |
+| [core/inspector/ScriptCallStack.h](#coreinspectorscriptcallstackh) | [*chromium/src/third_party/WebKit/Source/core/inspector/ScriptCallStack.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/ScriptCallStack.h) |
+| [platform/heap/Handle.h](#platformheaphandleh) | [*chromium/src/third_party/WebKit/Source/platform/heap/Handle.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/heap/Handle.h) |
+
+#### core/inspector/ScriptCallFrame.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [core/InspectorTypeBuilder.h](#coreinspectortypebuilderh) | [*chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h*](https://code.google.com/p/chromium/codesearch#chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h) |
+
+#### core/inspector/ScriptCallStack.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [core/InspectorTypeBuilder.h](#coreinspectortypebuilderh) | [*chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h*](https://code.google.com/p/chromium/codesearch#chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h) |
+| [core/inspector/ScriptCallFrame.h](#coreinspectorscriptcallframeh) | [*chromium/src/third_party/WebKit/Source/core/inspector/ScriptCallFrame.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/ScriptCallFrame.h) |
 | [platform/heap/Handle.h](#platformheaphandleh) | [*chromium/src/third_party/WebKit/Source/platform/heap/Handle.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/heap/Handle.h) |
