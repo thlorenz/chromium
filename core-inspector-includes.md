@@ -57,6 +57,8 @@ Sub dependencies are indented below, if they are not, that means that they alrea
         - [bindings/core/v8/ScopedPersistent.h](#bindingscorev8scopedpersistenth-2)
   - [DEPS core/inspector/InjectedScriptBase.h](#deps-coreinspectorinjectedscriptbaseh)
     - [chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h](#chromiumsrcoutdebuggenblinkcoreinspectortypebuilderh-2)
+  - [DEPS core/inspector/InstrumentingAgents.h](#deps-coreinspectorinstrumentingagentsh)
+    - [chromium/src/out/Debug/gen/blink/core/InstrumentingAgentsInl.h](#chromiumsrcoutdebuggenblinkcoreinstrumentingagentsinlh)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -244,6 +246,9 @@ None
   |----------|----------------|
   | [core/InstrumentingAgentsInl.h](#coreinstrumentingagentsinlh) | [*chromium/src/out/Debug/gen/blink/core/InstrumentingAgentsInl.h*](https://code.google.com/p/chromium/codesearch#chromium/src/out/Debug/gen/blink/core/InstrumentingAgentsInl.h) |
 
+
+[DEPS](#deps-coreinspectorinstrumentingagentsh)
+
 ###### platform/heap/Handle.h
 
 - 
@@ -396,3 +401,15 @@ None
 | Name     |      Path      |
 |----------|----------------|
 | [platform/JSONValues.h](#platformjsonvaluesh) | [*chromium/src/third_party/WebKit/Source/platform/JSONValues.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/JSONValues.h) |
+
+* * *
+
+### DEPS core/inspector/InstrumentingAgents.h
+
+[REF](#coreinspectorinstrumentingagentsh)
+
+#### chromium/src/out/Debug/gen/blink/core/InstrumentingAgentsInl.h
+
+| Name     |      Path      |
+|----------|----------------|
+| [platform/heap/Handle.h](#platformheaphandleh) | [*chromium/src/third_party/WebKit/Source/platform/heap/Handle.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/heap/Handle.h) |
