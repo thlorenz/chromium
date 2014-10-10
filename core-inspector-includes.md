@@ -8,6 +8,37 @@ Sub dependencies are indented below, if they are not, that means that they alrea
 
 ## core/inspector/InspectorDebuggerAgent.h
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [bindings/core/v8/ScriptState.h](#bindingscorev8scriptstateh)
+    - [bindings/core/v8/ScopedPersistent.h](#bindingscorev8scopedpersistenth)
+    - [bindings/core/v8/V8PerContextData.h](#bindingscorev8v8percontextdatah)
+- [chromium/src/out/Debug/gen/blink/core/InspectorFrontend.h](#chromiumsrcoutdebuggenblinkcoreinspectorfrontendh)
+    - [chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h](#chromiumsrcoutdebuggenblinkcoreinspectortypebuilderh)
+    - [core/inspector/InspectorFrontendChannel.h](#coreinspectorinspectorfrontendchannelh)
+    - [platform/JSONValues.h](#platformjsonvaluesh)
+- [core/frame/ConsoleTypes.h](#coreframeconsoletypesh)
+- [core/inspector/AsyncCallStackTracker.h](#coreinspectorasynccallstacktrackerh)
+- [core/inspector/ConsoleAPITypes.h](#coreinspectorconsoleapitypesh)
+- [core/inspector/InjectedScript.h](#coreinspectorinjectedscripth)
+    - [bindings/core/v8/ScriptValue.h](#bindingscorev8scriptvalueh)
+    - [chromium/src/out/Debug/gen/blink/core/InspectorTypeBuilder.h](#chromiumsrcoutdebuggenblinkcoreinspectortypebuilderh-1)
+    - [core/inspector/InjectedScriptBase.h](#coreinspectorinjectedscriptbaseh)
+    - [core/inspector/InjectedScriptManager.h](#coreinspectorinjectedscriptmanagerh)
+    - [core/inspector/ScriptArguments.h](#coreinspectorscriptargumentsh)
+- [core/inspector/InspectorBaseAgent.h](#coreinspectorinspectorbaseagenth)
+    - [chromium/src/out/Debug/gen/blink/core/InspectorBackendDispatcher.h](#chromiumsrcoutdebuggenblinkcoreinspectorbackenddispatcherh)
+    - [core/inspector/InstrumentingAgents.h](#coreinspectorinstrumentingagentsh)
+    - [platform/heap/Handle.h](#platformheaphandleh)
+- [core/inspector/PromiseTracker.h](#coreinspectorpromisetrackerh)
+- [core/inspector/ScriptBreakpoint.h](#coreinspectorscriptbreakpointh)
+- [core/inspector/ScriptDebugListener.h](#coreinspectorscriptdebuglistenerh)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
 | Name     |      Path      |
 |----------|----------------|
 | [bindings/core/v8/ScriptState.h](#bindingscorev8scriptstateh) | [*chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptState.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/bindings/core/v8/ScriptState.h) |
