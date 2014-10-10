@@ -6,7 +6,38 @@ Generated via [devtools snippet](https://github.com/thlorenz/chromium/blob/maste
 
 Sub dependencies are indented below, if they are not, that means that they already occurred as a sub dependency before.
 
-`wtf` lib and `v8` lib dependencies are left out since they are considered to be covered
+`wtf` lib and `v8` lib dependencies are left out since they are considered to be covered. Additionally it is assumed
+that `platform/heap/` is self serving, i.e. it doesn't reach out of its tree.
+
+#### gin and it's dependencies
+
+[Looks like](https://code.google.com/p/chromium/codesearch#chromium/src/gin/gin.gyp) gin depends on `v8` and some of `base`:
+
+```
+target_name': 'gin',
+'type': '<(component)',
+'dependencies': [
+  '../base/base.gyp:base',
+  '../base/third_party/dynamic_annotations/dynamic_annotations.gyp:dynamic_annotations',
+  '../v8/tools/gyp/v8.gyp:v8',
+],
+```
+
+[base](https://code.google.com/p/chromium/codesearch#chromium/src/base/base.gyp) (when not testing it) depends on some
+core base modules as well.
+
+```
+'target_name': 'base',
+'type': '<(component)',
+'dependencies': [
+  'base_static',
+  'allocator/allocator.gyp:allocator_extension_thunks',
+  '../third_party/modp_b64/modp_b64.gyp:modp_b64',
+  'third_party/dynamic_annotations/dynamic_annotations.gyp:dynamic_annotations',
+],
+```
+
+None of the base dependencies depend on anything but each other.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
