@@ -40,7 +40,11 @@ Sub dependencies are indented below, if they are not, that means that they alrea
     - [bindings/core/v8/ScopedPersistent.h](#bindingscorev8scopedpersistenth-1)
     - [bindings/core/v8/V8PersistentValueMap.h](#bindingscorev8v8persistentvaluemaph)
     - [bindings/core/v8/WrapperTypeInfo.h](#bindingscorev8wrappertypeinfoh)
+        - [chromium/src/gin/public/wrapper_info.h](#chromiumsrcginpublicwrapper_infoh)
     - [chromium/src/gin/public/context_holder.h](#chromiumsrcginpubliccontext_holderh)
+        - [chromium/src/base/basictypes.h](#chromiumsrcbasebasictypesh)
+        - [chromium/src/base/memory/scoped_ptr.h](#chromiumsrcbasememoryscoped_ptrh)
+      - [chromium/src/gin/gin_export.h](#chromiumsrcgingin_exporth)
     - [chromium/src/gin/public/gin_embedders.h](#chromiumsrcginpublicgin_embeddersh)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -278,6 +282,15 @@ None
 | [gin/public/wrapper_info.h](#ginpublicwrapper_infoh) | [*chromium/src/gin/public/wrapper_info.h*](https://code.google.com/p/chromium/codesearch#chromium/src/gin/public/wrapper_info.h) |
 | [platform/heap/Handle.h](#platformheaphandleh) | [*chromium/src/third_party/WebKit/Source/platform/heap/Handle.h*](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/platform/heap/Handle.h) |
 
+###### chromium/src/gin/public/wrapper_info.h
+
+- 
+
+  | Name     |      Path      |
+  |----------|----------------|
+  | [gin/gin_export.h](#gingin_exporth) | [*chromium/src/gin/gin_export.h*](https://code.google.com/p/chromium/codesearch#chromium/src/gin/gin_export.h) |
+  | [gin/public/gin_embedders.h](#ginpublicgin_embeddersh) | [*chromium/src/gin/public/gin_embedders.h*](https://code.google.com/p/chromium/codesearch#chromium/src/gin/public/gin_embedders.h) |
+
 #### chromium/src/gin/public/context_holder.h
 
 | Name     |      Path      |
@@ -285,6 +298,30 @@ None
 | [base/basictypes.h](#basebasictypesh) | [*chromium/src/base/basictypes.h*](https://code.google.com/p/chromium/codesearch#chromium/src/base/basictypes.h) |
 | [base/memory/scoped_ptr.h](#basememoryscoped_ptrh) | [*chromium/src/base/memory/scoped_ptr.h*](https://code.google.com/p/chromium/codesearch#chromium/src/base/memory/scoped_ptr.h) |
 | [gin/gin_export.h](#gingin_exporth) | [*chromium/src/gin/gin_export.h*](https://code.google.com/p/chromium/codesearch#chromium/src/gin/gin_export.h) |
+
+###### chromium/src/base/basictypes.h
+
+- 
+
+  | Name     |      Path      |
+  |----------|----------------|
+  | [base/macros.h](#basemacrosh) | [*chromium/src/base/macros.h*](https://code.google.com/p/chromium/codesearch#chromium/src/base/macros.h) |
+  | [base/port.h](#baseporth) | [*chromium/src/base/port.h*](https://code.google.com/p/chromium/codesearch#chromium/src/base/port.h) |
+
+###### chromium/src/base/memory/scoped_ptr.h
+
+- 
+
+  | Name     |      Path      |
+  |----------|----------------|
+  | [base/basictypes.h](#basebasictypesh) | [*chromium/src/base/basictypes.h*](https://code.google.com/p/chromium/codesearch#chromium/src/base/basictypes.h) |
+  | [base/compiler_specific.h](#basecompiler_specifich) | [*chromium/src/base/compiler_specific.h*](https://code.google.com/p/chromium/codesearch#chromium/src/base/compiler_specific.h) |
+  | [base/move.h](#basemoveh) | [*chromium/src/base/move.h*](https://code.google.com/p/chromium/codesearch#chromium/src/base/move.h) |
+  | [base/template_util.h](#basetemplate_utilh) | [*chromium/src/base/template_util.h*](https://code.google.com/p/chromium/codesearch#chromium/src/base/template_util.h) |
+
+##### chromium/src/gin/gin_export.h
+
+None
 
 #### chromium/src/gin/public/gin_embedders.h
 
